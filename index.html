@@ -3,42 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wiki Image Example</title>
+    <title>Two Images Example</title>
     <style>
-        /* Simple styling to center the content */
         body {
-            font-family: Arial, sans-serif;
+            font-family: sans-serif;
             text-align: center;
-            background-color: #f0f0f0;
+            background-color: #eaeaea;
             padding: 20px;
         }
-        
-        .image-container {
-            background-color: white;
+        /* This container holds both images side-by-side nicely */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .image-card {
+            background: white;
             padding: 15px;
-            border-radius: 10px;
-            display: inline-block;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            flex: 0 1 300px; /*Keeps boxes a manageable size */
         }
-
         img {
-            max-width: 100%; /* Ensures image fits on mobile screens */
+            max-width: 100%;
             height: auto;
-            border-radius: 5px;
+            border-radius: 4px;
         }
+        h2 { margin-top: 0; color: #555; font-size: 1.2rem;}
     </style>
 </head>
 <body>
 
-    <h1>The Red Panda</h1>
-    
-    <div class="image-container">
-        <img 
-            src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Endangered_Red_Panda.jpg" 
-            alt="A Red Panda resting on a tree branch" 
-            width="600"
-        >
-        <p><i>Image source: Wikimedia Commons</i></p>
+    <h1>External vs. Internal Images</h1>
+    <p>The left image loads from Wikipedia. The right image loads from your GitHub files.</p>
+
+    <div class="gallery">
+        <div class="image-card">
+            <h2>From Wiki (External)</h2>
+            <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Endangered_Red_Panda.jpg" 
+                alt="Red Panda sitting on tree"
+            >
+        </div>
+
+        <div class="image-card">
+            <h2>From Repo (Local file)</h2>
+            <img 
+                src="local-image.jpg" 
+                alt="A placeholder blue gradient box"
+            >
+        </div>
     </div>
 
 </body>

@@ -73,10 +73,8 @@
     <div style="display: flex; gap: 20px; align-items: center;">
         <div style="text-align: center;">
             <p>Direct SVG Code:</p>
-            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#2196F3" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="12" y1="8" x2="12" y2="12"></line>
-                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            <svg width="50" height="50">
+              <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
             </svg>
         </div>
 
@@ -88,19 +86,30 @@
 
     <hr>
 
-    <h2>3. Admonitions</h2>
-    <div class="admonition note">
-        <div class="admonition-title">ℹ️ Information</div>
-        <div class="admonition-content">Note text with a link to <a href="./about.html#details">another page's anchor</a>.</div>
-    </div>
-
-    <div class="admonition warning">
-        <div class="admonition-title">⚠️ Attention Required</div>
-        <div class="admonition-content">Warning text body goes here.</div>
-    </div>
-
-    <hr>
-
+    <h2>2. Admonitions with Titles</h2>
+    
+        <div class="admonition note">
+            <div class="admonition-title">ℹ️ Information</div>
+            <div class="admonition-content">
+                This is the body of the <strong>Note</strong>. It is used for helpful tips and supplementary data that the user should know.
+            </div>
+        </div>
+    
+        <div class="admonition warning">
+            <div class="admonition-title">⚠️ Attention Required</div>
+            <div class="admonition-content">
+                This is a <strong>Warning</strong>. Use this to alert users about potential pitfalls or things they should double-check.
+            </div>
+        </div>
+    
+        <div class="admonition error">
+            <div class="admonition-title">🚫 Critical Error</div>
+            <div class="admonition-content">
+                This is an <strong>Error</strong> block. It indicates that an action failed or that a specific requirement was not met.
+            </div>
+        </div>
+    
+        <hr>
     <h2>4. Image Loading Tests</h2>
     <div class="gallery">
         <div class="image-card">

@@ -230,6 +230,29 @@
         </div>
     </div>
 
+    <hr>
+
+    <h2>9. Code and Text Formatting</h2>
+    <p>This section tests how the renderer handles <code>inline code snippets</code> and larger blocks of pre-formatted text.</p>
+
+    <div class="admonition note">
+        <div class="admonition-title">ℹ️ Integration Tip</div>
+        <div class="admonition-content">
+            To initialize the component, use the <code>init()</code> function inside your <code>connectedCallback</code>.
+        </div>
+    </div>
+
+    <h4>Standard Code Block</h4>
+    <pre style="background-color: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; font-family: 'Courier New', Courier, monospace;">
+function testRendering() {
+    const status = "LWC Rendering";
+    console.log(`Testing: ${status}`);
+    return true;
+}
+    </pre>
+
+    <p>Testing mixed styles: <span class="highlight">Highlight</span>, <span class="strikethrough">Deleted Task</span>, and <code>constant_variable_name</code>.</p>
+
 
 
 </body>

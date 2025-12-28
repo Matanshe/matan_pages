@@ -3,59 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Two Images Example</title>
+    <title>Comprehensive LWC Test Page</title>
     <style>
-        body {
-            font-family: sans-serif;
-            text-align: center;
-            background-color: #eaeaea;
-            padding: 20px;
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; padding: 20px; background-color: #f4f4f9; }
+        
+        /* Admonitions Styles */
+        .admonition { 
+            margin-bottom: 20px; 
+            border-left: 5px solid; 
+            border-radius: 4px; 
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
-        /* This container holds both images side-by-side nicely */
-        .gallery {
+        .admonition-title { 
+            padding: 8px 15px; 
+            font-weight: bold; 
+            text-transform: uppercase;
+            font-size: 0.9rem;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
+            align-items: center;
         }
-        .image-card {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            flex: 0 1 300px; /*Keeps boxes a manageable size */
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 4px;
-        }
-        h2 { margin-top: 0; color: #555; font-size: 1.2rem;}
+        .admonition-content { padding: 15px; background-color: white; }
+
+        /* Note Colors */
+        .note { border-color: #2196F3; background-color: #e7f3fe; }
+        .note .admonition-title { background-color: #d1e9ff; color: #0b548a; }
+
+        /* Warning Colors */
+        .warning { border-color: #ffc107; background-color: #fff3cd; }
+        .warning .admonition-title { background-color: #ffe8a1; color: #856404; }
+
+        /* Error Colors */
+        .error { border-color: #f44336; background-color: #f8d7da; }
+        .error .admonition-title { background-color: #f5c6cb; color: #721c24; }
+        
+        /* Gallery & Images */
+        .gallery { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px; }
+        .image-card { background: white; padding: 10px; border: 1px solid #ddd; border-radius: 8px; flex: 1 1 300px; text-align: center; }
+        img { max-width: 100%; height: auto; border-radius: 4px; border: 1px solid #eee; }
+
+        /* Tables */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; }
+        th, td { border: 1px solid #ccc; padding: 12px; text-align: left; }
+        th { background-color: #f8f9fa; }
+        .nested-table { width: 100%; margin: 0; border: none; }
+        .nested-table td { background-color: #fdfdfd; border: 1px solid #eee; }
+
+        /* Typography */
+        .highlight { background-color: #fff3cd; padding: 2px 4px; border-radius: 2px; }
+        .strikethrough { text-decoration: line-through; color: #888; }
     </style>
 </head>
 <body>
 
-    <h1>External vs. Internal Images</h1>
-    <p>The left image loads from Wikipedia. The right image loads from your GitHub files.</p>
+    <div>
+        <h1>1. Headings & Typography</h1>
+        <p>Testing <strong>Bold</strong>, <em>Italics</em>, and <span class="highlight">Simulated Mark</span>.</p>
+        <h3>Small Heading (H3)</h3>
+        <p>This section tests the visual hierarchy of the font sizes.</p>
+    </div>
 
-    <div class="gallery">
-        <div class="image-card">
-            <h2>From Wiki (External)</h2>
-            <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Endangered_Red_Panda.jpg" 
-                alt="Red Panda sitting on tree"
-            >
-        </div>
+    <hr>
 
-        <div class="image-card">
-            <h2>From Repo (Local file)</h2>
-            <img 
-                src="./local-image.jpg" 
-                alt="A placeholder blue gradient box"
-            >
+    <h2>2. Admonitions with Titles</h2>
+
+    <div class="admonition note">
+        <div class="admonition-title">ℹ️ Information</div>
+        <div class="admonition-content">
+            This is the body of the <strong>Note</strong>. It is used for helpful tips and supplementary data that the user should know.
         </div>
     </div>
+
+    <div class="admonition warning">
+        <div class="admonition-title">⚠️ Attention Required</div>
+        <div class="admonition-content">
+            This is a <strong>Warning</strong>. Use this to alert users about potential pitfalls or things they should double-check.
+        </div>
+    </div>
+
+    <div class="admonition error">
+        <div class="admonition-title">🚫 Critical Error</div>
+        <div class="admonition-content">
+            This is an <strong>Error</strong> block. It indicates that an action failed or that a specific requirement was not met.
+        </div>
+    </div>
+
+    <hr>
+
+    <h2>3. Image Loading Tests</h2>
+    <div class="gallery">
+        <div class="image-card">
+            <h4>External (Wiki)</h4>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Endangered_Red_Panda.jpg" alt="Red Panda">
+        </div>
+
+        <div class="image-card">
+            <h4>Repo (Full URL)</h4>
+            <img src="https://matanshe.github.io/matan_pages/local-image.jpg" alt="Full Repo URL">
+        </div>
+
+        <div class="image-card">
+            <h4>Repo (Relative Path)</h4>
+            <img src="./local-image.jpg" alt="Local Relative Image">
+        </div>
+    </div>
+
+    <hr>
+
+    <h2>4. Links</h2>
+    <ul>
+        <li><a href="https://google.com">External Link</a></li>
+        <li><a href="https://matanshe.github.io/matan_pages/about.html">Repo Page (Full URL)</a></li>
+        <li><a href="./about.html">Repo Page (Relative Path)</a></li>
+    </ul>
+
+    <hr>
+
+    <h2>5. Complex Table</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Module</th>
+                <th>Compatibility</th>
+                <th>Technical Details (Nested)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>CSS Rendering</td>
+                <td><span class="highlight">High</span></td>
+                <td>
+                    <table class="nested-table">
+                        <tr><td>Flexbox</td><td>Supported</td></tr>
+                        <tr><td>Grid</td><td>Partial</td></tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>Legacy Elements</td>
+                <td class="strikethrough">Unsupported</td>
+                <td>Replaced with generic Divs and Spans.</td>
+            </tr>
+        </tbody>
+    </table>
 
 </body>
 </html>

@@ -193,9 +193,42 @@
         <p>This is a target for the internal jump link. If you clicked "Jump to Bottom Anchor", your browser should have scrolled here.</p>
         <a href="#top" class="btn">Back to Top ↑</a>
     </div>
+    
+    <hr>
 
     <h2>7. link to PDF</h2>
     <a href="./pdf_sample_file.pdf">PDF file</a>
+
+    <hr>
+
+    <h2>8. Javascript Behavior Test</h2>
+    <div class="admonition warning">
+        <div class="admonition-title">⚠️ Security Note</div>
+        <div class="admonition-content">
+            Most LWC renderers strip <code>&lt;script&gt;</code> tags. This section tests if <strong>inline</strong> Javascript (onclick) or <code>&lt;button&gt;</code> elements are preserved.
+        </div>
+    </div>
+
+    <div class="gallery">
+        <div class="image-card">
+            <h4>Standard Button</h4>
+            <button type="button" onclick="alert('Inline JS is working!')" style="padding: 10px; cursor: pointer;">
+                Click for Alert
+            </button>
+            <p><small>(Tests if &lt;button&gt; and onclick are allowed)</small></p>
+        </div>
+
+        <div class="image-card">
+            <h4>Link as Button</h4>
+            <a href="javascript:void(0);" onclick="document.getElementById('js-test-msg').style.display='block';" class="btn">
+                Reveal Message
+            </a>
+            <p id="js-test-msg" style="display:none; color: green; font-weight: bold; margin-top: 10px;">
+                JS execution successful!
+            </p>
+            <p><small>(Tests javascript:void(0) and DOM manipulation)</small></p>
+        </div>
+    </div>
 
 
 
